@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\UserController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +18,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('test/{id}', function ($id) {
+    return view('display/test', ['id' => $id] );
+});
+
+Route::get("m1", [UserController::class, "method_1"]);
+Route::get("m2/{id}", [UserController::class, "method_2"]);
+
+
