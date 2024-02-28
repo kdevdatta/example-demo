@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\UserController;
-
+use App\Http\Controllers\DemoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,4 +26,4 @@ Route::get('test/{id}', function ($id) {
 Route::get("m1", [UserController::class, "method_1"]);
 Route::get("m2/{id}", [UserController::class, "method_2"]);
 
-
+Route::get("/demo/test", [DemoController::class, "test"]);
